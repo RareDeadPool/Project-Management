@@ -1,0 +1,93 @@
+ /* Reset styles */
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Poppins', sans-serif;
+ }
+
+ /* Background image */
+ .background {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-image: url('https://source.unsplash.com/random/1600x900');
+     background-size: cover;
+     background-position: center;
+     filter: blur(5px);
+     z-index: -1;
+ }
+
+ /* Container for the form */
+ .container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+ }
+
+ .form-container {
+     background: rgba(255, 255, 255, 0.9);
+     padding: 40px;
+     border-radius: 12px;
+     width: 350px;
+     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+     text-align: center;
+ }
+
+ /* Toggle Buttons */
+ .toggle-buttons {
+     display: flex;
+     margin-bottom: 20px;
+ }
+
+ .toggle-buttons button {
+     flex: 1;
+     padding: 10px;
+     cursor: pointer;
+     background: none;
+     border: none;
+     font-size: 18px;
+     border-bottom: 2px solid transparent;
+     transition: 0.3s;
+ }
+
+ .toggle-buttons .active {
+     border-bottom: 2px solid #3498db;
+     font-weight: bold;
+     color: #3498db;
+ }
+
+ /* Form styling */
+ .form {
+     display: none;
+ }
+
+ .form.active {
+     display: block;
+ }
+
+ input {
+     width: 100%;
+     padding: 10px;
+     margin: 10px 0;
+     border: 1px solid #ddd;
+     border-radius: 8px;
+ }
+
+ button {
+     width: 100%;
+     padding: 12px;
+     background-color: #3498db;
+     color: white;
+     border: none;
+     border-radius: 8px;
+     cursor: pointer;
+     transition: background-color 0.3s;
+ }
+
+ button:hover {
+     background-color: #2980b9;
+ }
