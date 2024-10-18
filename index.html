@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login & Signup Page</title>
+ <style>
+    /* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Background image */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://source.unsplash.com/random/1600x900');
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  z-index: -1;
+}
+
+/* Container for the form */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Toggle Buttons */
+.toggle-buttons {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.toggle-buttons button {
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 18px;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.toggle-buttons .active {
+  border-bottom: 2px solid #3498db;
+  font-weight: bold;
+  color: #3498db;
+}
+
+/* Form styling */
+.form {
+  display: none;
+}
+
+.form.active {
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+ </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="container">
+    <div class="form-container">
+      <
+
+      <!-- Login Form -->
+      <form id="loginForm" class="form active" onsubmit="Loginfunction(event)">
+        <h2>Login</h2>
+        <input type="email" id="loginEmail" placeholder="Email" required />
+        <input type="password" id="loginPassword" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+
+      <!-- Signup Form -->
+      <form id="signupForm" class="form" onsubmit="Signupfunction(event)">
+        <h2>Signup</h2>
+        <input type="text" id="signupUsername" placeholder="Username" required />
+        <input type="email" id="signupEmail" placeholder="Email" required />
+        <input type="password" id="signupPassword" placeholder="Password" required />
+        <button type="submit">Signup</button>
+      </form>
+      <div class="toggle-buttons">
+        <button id="loginBtn" class="active" onclick="toggleForm('login')">Login</button>
+        <button id="signupBtn" onclick="toggleForm('signup')">Signup</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Function to toggle between Login and Signup forms
+function toggleForm(formType) {
+  const loginForm = document.getElementById('loginForm');
+  const signupForm = document.getElementById('signupForm');
+  const loginBtn = document.getElementById('loginBtn');
+  const signupBtn = document.getElementById('signupBtn');
+
+  if (formType === 'login') {
+    loginForm.classList.add('active');
+    signupForm.classList.remove('active');
+    loginBtn.classList.add('active');
+    signupBtn.classList.remove('active');
+  } else {
+    signupForm.classList.add('active');
+    loginForm.classList.remove('active');
+    signupBtn.classList.add('active');
+    loginBtn.classList.remove('active');
+  }
+}
+
+
+function Loginfunction(event) {
+    event.preventDefault();
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
+
+  console.log('Login Info:');
+  console.log('Email:', email);
+  console.log('Password:', password);
+  
+}
+
+
+function Signupfunction(event) {
+    event.preventDefault();
+  const username = document.getElementById('signupUsername').value;
+  const email = document.getElementById('signupEmail').value;
+  const password = document.getElementById('signupPassword').value;
+
+  console.log('Signup Info:');
+  console.log('Username:', username);
+  console.log('Email:', email);
+  console.log('Password:', password);
+
+}
+
+  </script>
+</body>
+</html>
